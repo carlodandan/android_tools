@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# Copyright (C) 2019 Shivam Kumar Jha <jha.shivam3@gmail.com>
+# Copyright (C) 2019 Shivam Kumar Jha <carlodandan.personal@proton.me>
 #
 # Helper functions
 
@@ -96,7 +96,7 @@ DOTFILES=(
 for ELEMENT in ${DOTFILES[@]}; do
     [[ -d $ELEMENT ]] && git reset $DOTFILES > /dev/null 2>&1
 done
-git -c "user.name=ShivamKumarJha" -c "user.email=jha.shivam3@gmail.com" commit -sm "OEM Release" > /dev/null 2>&1
+git -c "user.name=carlodandan" -c "user.email=carlodandan.personal@proton.me" commit -sm "OEM Release" > /dev/null 2>&1
 rm -rf ${PROJECT_DIR}/kernels/${UNZIP_DIR}
 
 # Find best CAF TAG
@@ -183,11 +183,11 @@ DIFFPATHS=(
 )
 for ELEMENT in ${DIFFPATHS[@]}; do
     [[ -d $ELEMENT ]] && git add $ELEMENT -f > /dev/null 2>&1
-    git -c "user.name=ShivamKumarJha" -c "user.email=jha.shivam3@gmail.com" commit -sm "Add $ELEMENT modifications" > /dev/null 2>&1
+    git -c "user.name=carlodandan" -c "user.email=carlodandan.personal@proton.me" commit -sm "Add $ELEMENT modifications" > /dev/null 2>&1
 done
 # Remaining OEM modifications
 git add --all -f > /dev/null 2>&1
-git -c "user.name=ShivamKumarJha" -c "user.email=jha.shivam3@gmail.com" commit -sm "Add remaining OEM modifications" > /dev/null 2>&1
+git -c "user.name=carlodandan" -c "user.email=carlodandan.personal@proton.me" commit -sm "Add remaining OEM modifications" > /dev/null 2>&1
 
 # Push to GitHub
 if [[ ${ORGMEMBER} == "y" ]] && [[ ! -z ${GIT_TOKEN} ]]; then
